@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vishal Kumar | Portfolio</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial;
+  scroll-behavior:smooth;
+}
+
+body{
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  color:white;
+}
+
+/* Navbar */
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:20px;
+  background:rgba(30,41,59,0.8);
+  backdrop-filter:blur(10px);
+  position:sticky;
+  top:0;
+}
+
+nav h1{
+  color:#38bdf8;
+}
+
+nav a{
+  color:white;
+  margin:0 10px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#38bdf8;
+}
+
+/* Hero */
+.hero{
+  height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.hero h2{
+  font-size:45px;
+  color:#38bdf8;
+}
+
+.hero p{
+  margin:10px 0;
+  font-size:18px;
+}
+
+.btn{
+  padding:10px 20px;
+  background:#38bdf8;
+  color:black;
+  border:none;
+  margin:10px;
+  cursor:pointer;
+  border-radius:5px;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#0ea5e9;
+  transform:scale(1.05);
+}
+
+/* Section */
+section{
+  padding:60px 20px;
+  max-width:1000px;
+  margin:auto;
+}
+
+/* Skills */
+.skill{
+  margin:10px 0;
+}
+
+.bar{
+  background:#1e293b;
+  height:10px;
+  border-radius:5px;
+}
+
+.fill{
+  height:10px;
+  background:#38bdf8;
+  border-radius:5px;
+}
+
+/* Projects */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#1e293b;
+  padding:20px;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+/* Contact */
+.contact{
+  text-align:center;
+}
+
+/* Footer */
+footer{
+  text-align:center;
+  padding:20px;
+  background:#1e293b;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+  <h1>Vishal Kumar</h1>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <h2 id="typing"></h2>
+  <p>Full Stack Developer | React | Node.js</p>
+
+  <button class="btn" onclick="scrollToSection('projects')">View Projects</button>
+
+  <!-- Resume Button -->
+  <a href="./resume.pdf">
+    <button class="btn">📄 View Resume</button>
+  </a>
+</div>
+
+<!-- About -->
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    Full Stack Developer skilled in React, Node.js and building modern web applications.
+    Passionate about solving real-world problems and learning new technologies.
+  </p>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+  <h2>Skills</h2>
+
+  <div class="skill">HTML</div>
+  <div class="bar"><div class="fill" style="width:90%"></div></div>
+
+  <div class="skill">CSS</div>
+  <div class="bar"><div class="fill" style="width:85%"></div></div>
+
+  <div class="skill">JavaScript</div>
+  <div class="bar"><div class="fill" style="width:80%"></div></div>
+
+  <div class="skill">React</div>
+  <div class="bar"><div class="fill" style="width:75%"></div></div>
+
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="projects">
+
+    <div class="card">
+      <h3>Full Stack Website</h3>
+      <p>React + Node.js project with API integration</p>
+    </div>
+
+    <div class="card">
+      <h3>Portfolio Website</h3>
+      <p>Responsive personal portfolio</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <p>Email: vksingh829842@gmail.com</p>
+  <p>Phone: 9971857466</p>
+
+  <p>
+    <a href="https://github.com/vishal007-dot" style="color:#38bdf8;">GitHub</a>
+  </p>
+</section>
+
+<!-- Footer -->
+<footer>
+  © 2026 Vishal Kumar
+</footer>
+
+<script>
+// smooth scroll
+function scrollToSection(id){
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+// typing effect
+const text = "Hi, I'm Vishal 👋";
+let i = 0;
+function typeEffect(){
+  if(i < text.length){
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeEffect, 100);
+  }
+}
+typeEffect();
+</script>
+
+</body>
+</html>
